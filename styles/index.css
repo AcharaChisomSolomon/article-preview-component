@@ -1,0 +1,209 @@
+@font-face {
+    font-family: 'Manrope';
+    src: url(../fonts/Manrope-VariableFont_wght.ttf);
+}
+:root {
+    --font-family: 'Manrope', sans-serif;
+
+    --primary-text-color: #48556a;
+    --secondary-text-color: #6e8098;
+    --tetiary-text-color: #9daec2;
+
+    --body-bg-color: #ecf2f8;
+    --card-bg-color: #ffffff;
+
+    --primary-text-font-size: 0.8125rem;
+
+    --primary-header-font-size: 1rem;
+    --secondary-header-font-size: 1.25rem;
+
+    --border-radius: 0.625rem;
+    --box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.5);
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--font-family);
+    background-color: var(--body-bg-color);
+    color: var(--secondary-text-color);
+    font-size: var(--primary-text-font-size);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0.00763rem;
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1, h2 {
+    font-weight: 700;
+    color: var(--primary-text-color);
+}
+h1 {
+    font-size: var(--primary-header-font-size);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.0125rem;
+}
+h2 {
+    font-size: var(--primary-text-font-size);
+}
+img {
+    max-width: 100%;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+
+.container {
+    max-width: 23.4375rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.main-box {
+    box-shadow: var(--box-shadow);
+}
+header {
+    line-height: 0;
+}
+article {
+    background-color: var(--card-bg-color);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    padding-top: 2rem;
+}
+article h1,
+article .description {
+    padding: 0 2rem;
+}
+.description {
+    margin-bottom: 1rem;
+}
+
+
+footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* border: 1px solid red; */
+    padding: 1rem 2rem 1.25rem;
+}
+footer img {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+}
+footer div {
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+footer div p {
+    color: var(--tetiary-text-color);
+}
+footer button {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+footer button:hover {
+    background-color: var(--primary-text-color);
+}
+footer button:hover svg path {
+    fill: var(--card-bg-color);
+}
+footer button:active {
+    height: 2.2rem;
+    width: 2.2rem;
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+}
+.tooltip-content {
+    display: none;
+    position: absolute;
+    width: 15.5rem;
+    background-color: var(--primary-text-color);
+    padding: 1.13rem 0;
+    border-radius: var(--border-radius);
+    left: -350%;
+    top: -250%;
+}
+.tooltip-content::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 51%;
+    margin-left: -0.625rem;
+    border-width: 0.625rem;
+    border-style: solid;
+    border-color: var(--primary-text-color) transparent transparent transparent;
+
+}
+
+
+.mobile-share {
+    display: none;
+    background-color: var(--primary-text-color);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+.mobile-share div,
+.tooltip-content {
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.mobile-share div p,
+.tooltip-content p {
+    text-transform: uppercase;
+    letter-spacing: 0.3125rem;
+    margin-right: 0.31rem;
+}
+.mobile-share button {
+    background-color: var(--secondary-text-color);
+}
+.mobile-share button svg path {
+    fill: var(--card-bg-color);
+}
+.mobile-share button:hover {
+    background-color: var(--card-bg-color);
+}
+.mobile-share button:hover svg path {
+    fill: var(--primary-text-color);
+}
+
+
+@media (min-width: 1000px) {
+    .container {
+        max-width: 45.625rem;
+    }
+    .main-box {
+        display: flex;
+    }
+    img {
+        height: 100%;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: var(--border-radius);
+    }
+    article {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: var(--border-radius);
+        padding: 2rem 0.5rem 0.75rem;
+    }
+}
