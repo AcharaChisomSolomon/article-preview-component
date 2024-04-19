@@ -201,6 +201,9 @@ footer button:active {
         border-top-right-radius: 0;
         border-bottom-left-radius: var(--border-radius);
     }
+    h1 {
+        font-size: var(--secondary-header-font-size);
+    }
     article {
         border-bottom-left-radius: 0;
         border-top-right-radius: var(--border-radius);
